@@ -14,7 +14,7 @@
         protected function tearDown()
        {
             Stylist::deleteAll();
-            // SecondClass::deleteAll();
+            // Client::deleteAll();
        }
 
 //Test Getters and Setters
