@@ -7,7 +7,7 @@
         private $name;
 
 //Constructor
-        function __construct($id, $name)
+        function __construct($id = null, $name)
         {
             $this->id = $id;
             $this->name = $name;
@@ -58,8 +58,20 @@
             $GLOBALS['DB']->exec("DELETE FROM stylists");
         }
 
+        static function find($search_id)
+        {
+            $found_stylist = null;
+            $stylists = Stylist::getAll();
+            foreach($stylists as $stylist) {
+                $stylist_id = $stylist->getId();
+                if ($stylist_id == $search_id) {
+                    $found_stylist = $stylist;
+                }
+            }
+            return $found_stylist;
+        }
 
 
-
+//End Class
     }
 ?>

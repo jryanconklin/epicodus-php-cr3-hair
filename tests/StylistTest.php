@@ -118,7 +118,25 @@
             $this->assertEquals([], $result);
         }
 
+        function test_find()
+        {
+            //Arrange
+            $id1 = null;
+            $name1 = "Bilbo Baggins";
+            $test_stylist1 = new Stylist($id1, $name1);
+            $test_stylist1->save();
+            $id2 = null;
+            $name2 = "Frodo Baggins";
+            $test_stylist2 = new Stylist($id2, $name2);
+            $test_stylist2->save();
 
+            //Act
+            $result = Stylist::find($test_stylist1->getId());
+
+            //Assert
+            $this->assertEquals($test_stylist1, $result);
+
+        }
 
 //End Unit Test
    }
