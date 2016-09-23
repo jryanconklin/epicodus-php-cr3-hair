@@ -66,6 +66,21 @@ __Input__: 'Gandalf the Grey'
 
 __Output__: ''
 
+## SQL Database Install Commands ##
+
+CREATE DATABASE hair_salon;
+USE hair_salon;
+
+CREATE TABLE stylists (
+    id serial PRIMARY KEY,
+    name VARCHAR(70)
+    );
+
+CREATE TABLE clients (
+    id serial PRIMARY KEY,
+    name VARCHAR(70),
+    stylist_id INT
+    );
 
 ## Author/s
 J. Ryan Conklin
