@@ -110,6 +110,44 @@
             $this->assertEquals([], Stylist::getAll());
         }
 
+        function test_getClients()
+        {
+            //Arrange
+            $id1 = null;
+            $name1 = "Bilbo Baggins";
+            $test_stylist1 = new Stylist($id1, $name1);
+            $test_stylist1->save();
+            $stylist_id1 = $test_stylist1->getId();
+
+            $id2 = null;
+            $name2 = "Frodo Baggins";
+            $test_stylist2 = new Stylist($id2, $name2);
+            $test_stylist2->save();
+            $stylist_id2 = $test_stylist2->getId();
+
+            $id1 = null;
+            $name1 = "Gandalf the Grey";
+            $test_client1 = new Client($id1, $name1, $stylist_id1);
+            $test_client1->save();
+
+            $id2 = null;
+            $name2 = "Thorin Oakenshield";
+            $test_client2 = new Client($id2, $name2, $stylist_id1);
+            $test_client2->save();
+
+            $id3 = null;
+            $name3 = "Aragorn";
+            $test_client3 = new Client($id3, $name3, $stylist_id2);
+            $test_client3->save();
+
+
+            //Act
+            $result = $test_stylist1->getClients();
+
+            //Assert
+            $this->assertEquals([$test_client1, $test_client2], $result);
+        }
+
 //Test Static Methods
         function test_getAll()
         {

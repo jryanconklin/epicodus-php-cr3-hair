@@ -70,7 +70,8 @@
             foreach($returned_clients as $client) {
                 $id = $client['id'];
                 $name = $client['name'];
-                $new_client = new Client($id, $name);
+                $stylist_id = $client['stylist_id'];
+                $new_client = new Client($id, $name, $stylist_id);
                 array_push($clients, $new_client);
             }
             return $clients;
@@ -98,6 +99,6 @@
 
 
 
-
+//End Class
     }
 ?>
