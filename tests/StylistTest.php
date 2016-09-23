@@ -95,6 +95,20 @@
             $this->assertEquals("Frodo Baggins", $test_stylist->getName());
         }
 
+        function test_delete()
+        {
+            //Arrange
+            $id = null;
+            $name = "Bilbo Baggins";
+            $test_stylist = new Stylist($id, $name);
+            $test_stylist->save();
+
+            //Act
+            $test_stylist->delete();
+
+            //Assert
+            $this->assertEquals([], Stylist::getAll());
+        }
 
 //Test Static Methods
         function test_getAll()
