@@ -1,8 +1,9 @@
-# Application Name
-Subtitle of Lesson
+# Hair Salon
+Database Basics with PHP
+*Code Review #3*
 
 ## Features
-A description of what it does.
+Database application to record a list of stylists and their respective clients.
 
 ## Technologies
 
@@ -10,7 +11,7 @@ PHP, SQL, Silex, Twig, HTML, CSS and Bootstrap.
 
 ## Usage
 
-To use the code, you can clone the repository at [https://github.com/jryanconklin/path-to-repo](https://github.com/jryanconklin/path-to-repo).
+To use the code, you can clone the repository at [https://github.com/jryanconklin/epicodus-php-cr3-hair](https://github.com/jryanconklin/epicodus-php-cr3-hair).
 
 For best results, please:
 
