@@ -78,6 +78,24 @@
             $this->assertEquals($test_stylist, $result[0]);
         }
 
+        function test_update()
+        {
+            //Arrange
+            $id = null;
+            $name = "Bilbo Baggins";
+            $test_stylist = new Stylist($id, $name);
+            $test_stylist->save();
+
+            $new_name = "Frodo Baggins";
+
+            //Act
+            $test_stylist->update($new_name);
+
+            //Assert
+            $this->assertEquals("Frodo Baggins", $test_stylist->getName());
+        }
+
+
 //Test Static Methods
         function test_getAll()
         {
