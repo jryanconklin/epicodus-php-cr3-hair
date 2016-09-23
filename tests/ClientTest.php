@@ -11,57 +11,115 @@
 
     class ClientTest extends PHPUnit_Framework_TestCase
     {
-    //     protected function tearDown()
-    //    {
-    //        Stylist::deleteAll();
-    //        Client::deleteAll();
-    //    }
+        protected function tearDown()
+       {
+           Stylist::deleteAll();
+           Client::deleteAll();
+       }
 
 //Test Getters and Setters
-       function test_getId()
-       {
-           //Arrange
-           $id = 1;
-           $name = "Gandalf the Grey";
-           $test_client = new Client($id, $name);
+        function test_getId()
+        {
+            //Arrange
+            $id = 1;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name);
 
-           //Act
-           $result = $test_client->getId();
+            //Act
+            $result = $test_client->getId();
 
-           //Assert
-           $this->assertEquals($id, $result);
-       }
+            //Assert
+            $this->assertEquals($id, $result);
+        }
 
-       function test_getName()
-       {
-           //Arrange
-           $id = 1;
-           $name = "Gandalf the Grey";
-           $test_client = new Client($id, $name);
+        function test_getName()
+        {
+            //Arrange
+            $id = 1;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name);
 
-           //Act
-           $result = $test_client->getName();
+            //Act
+            $result = $test_client->getName();
 
-           //Assert
-           $this->assertEquals($name, $result);
-       }
+            //Assert
+            $this->assertEquals($name, $result);
+        }
 
-       function test_setName()
-       {
-           //Arrange
-           $id = 1;
-           $name = "Gandalf the Grey";
-           $test_client = new Client($id, $name);
-           $new_name = "Thorin Oakenshield";
+        function test_setName()
+        {
+            //Arrange
+            $id = 1;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name);
+            $new_name = "Thorin Oakenshield";
 
-           //Act
-           $test_client->setName($new_name);
-           $result = $test_client->getName();
+            //Act
+            $test_client->setName($new_name);
+            $result = $test_client->getName();
 
-           //Assert
-           $this->assertEquals($new_name, $result);
-       }
+            //Assert
+            $this->assertEquals($new_name, $result);
+        }
 
+
+//Test Methods
+        function test_save()
+        {
+            //Arrange
+            $id = null;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name);
+            $test_client->save();
+
+            //Act
+            $result = Client::getAll();
+
+            //Assert
+            $this->assertEquals($test_client, $result[0]);
+        }
+
+
+
+//Test Static Methods
+        function test_getAll()
+        {
+            //Arrange
+            $id1 = null;
+            $name1 = "Gandalf the Grey";
+            $test_client1 = new Client($id1, $name1);
+            $test_client1->save();
+            $id2 = null;
+            $name2 = "Thorin Oakenshield";
+            $test_client2 = new Client($id2, $name2);
+            $test_client2->save();
+
+            //Act
+            $result = Client::getAll();
+
+            //Assert
+            $this->assertEquals([$test_client1, $test_client2], $result);
+        }
+
+        function test_deleteAll()
+        {
+            //Arrange
+            $id1 = null;
+            $name1 = "Bilbo Baggins";
+            $test_stylist1 = new Stylist($id1, $name1);
+            $test_stylist1->save();
+            $id2 = null;
+            $name2 = "Frodo Baggins";
+            $test_stylist2 = new Stylist($id2, $name2);
+            $test_stylist2->save();
+
+            //Act
+            Stylist::deleteAll();
+            $result = Stylist::getAll();
+
+            //Assert
+            $this->assertEquals([], $result);
+        }
 
 
 
