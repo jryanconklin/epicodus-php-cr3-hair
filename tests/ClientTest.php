@@ -13,8 +13,8 @@
     {
         protected function tearDown()
        {
-           Stylist::deleteAll();
-           Client::deleteAll();
+            Stylist::deleteAll();
+            Client::deleteAll();
        }
 
 //Test Getters and Setters
@@ -105,11 +105,11 @@
         {
             //Arrange
             $id1 = null;
-            $name1 = "Bilbo Baggins";
+            $name1 = "Gandalf the Grey";
             $test_stylist1 = new Stylist($id1, $name1);
             $test_stylist1->save();
             $id2 = null;
-            $name2 = "Frodo Baggins";
+            $name2 = "Thorin Oakenshield";
             $test_stylist2 = new Stylist($id2, $name2);
             $test_stylist2->save();
 

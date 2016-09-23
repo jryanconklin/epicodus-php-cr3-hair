@@ -167,7 +167,6 @@
 
             //Assert
             $this->assertEquals($test_stylist1, $result);
-
         }
 
 //End Unit Test
