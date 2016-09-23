@@ -79,6 +79,37 @@
             $this->assertEquals($test_client, $result[0]);
         }
 
+        function test_update()
+        {
+            //Arrange
+            $id = null;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name);
+            $test_client->save();
+
+            $new_name = "Thorin Oakenshield";
+
+            //Act
+            $test_client->update($new_name);
+
+            //Assert
+            $this->assertEquals("Thorin Oakenshield", $test_client->getName());
+        }
+
+        function test_delete()
+        {
+            //Arrange
+            $id = null;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name);
+            $test_client->save();
+
+            //Act
+            $test_client->delete();
+
+            //Assert
+            $this->assertEquals([], Client::getAll());
+        }
 
 
 //Test Static Methods
@@ -139,8 +170,6 @@
             //Assert
             $this->assertEquals($test_client1, $result);
         }
-
-
 
 
 // End Unit Tests
