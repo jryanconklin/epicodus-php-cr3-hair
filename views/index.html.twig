@@ -12,6 +12,7 @@
                                 <th>Stylist ID</th>
                                 <th>Stylist Name</th>
                                 <th>Client List</th>
+                                <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -20,6 +21,7 @@
                                 <td>{{ stylist.getId }}</td>
                                 <td>{{ stylist.getName }}</td>
                                 <td><a href="/stylists/{{ stylist.getId }}">Check It!</a></td>
+                                <td><a href="/stylists/{{ stylist.getId }}/edit">Edit</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
