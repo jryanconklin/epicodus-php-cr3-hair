@@ -29,7 +29,8 @@ img {
 }
 
 .data-table,
-.add-data {
+.add-data,
+.edit-form {
   margin-top: 25px;
 }
 

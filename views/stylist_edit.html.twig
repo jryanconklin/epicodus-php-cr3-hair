@@ -1,17 +1,22 @@
 {% include 'header.html.twig' %}
-
+            <br>
             <h4>Update Info on {{ stylist.getName }}?</h4>
-
-            <form action="/stylists/{{ stylist.getId }}" method="post">
-                <input name="_method" type="hidden" value="patch">
-                <label for="name">Rename {{ stylist.getName }}</label>
-                <input id="name" name="name" type="text">
-                <button class="btn btn-success" type="submit">Update</button>
-            </form>
-            <hr>
-            <form action="/stylists/{{ stylist.getId }}" method="post">
-                <input name="_method" type="hidden" value="delete">
-                <button class="btn btn-danger" type="submit">Delete this Stylist</button>
-            </form>
+            <div class="edit-form">
+                <form action="/stylists/{{ stylist.getId }}" method="post">
+                    <input name="_method" type="hidden" value="patch">
+                    <label for="name">Rename {{ stylist.getName }}</label>
+                    <input id="name" name="name" type="text">
+                    <button class="btn btn-success" type="submit">Update</button>
+                </form>
+                <br>
+                <p>Shy Away from this Danger! <a href="/">Go Back!</a></p>
+                <br>
+                <br>
+                <hr>
+                <form action="/stylists/{{ stylist.getId }}" method="post">
+                    <input name="_method" type="hidden" value="delete">
+                    <button class="btn btn-danger" type="submit">Delete this Stylist</button>
+                </form>
+            </div>
 
 {% include 'footer.html.twig' %}
