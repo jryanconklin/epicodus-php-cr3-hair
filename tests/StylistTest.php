@@ -9,7 +9,7 @@
     require_once __DIR__."/../src/Stylist.php";
     require_once __DIR__."/../src/Client.php";
 
-    class ClassTest extends PHPUnit_Framework_TestCase
+    class StylistTest extends PHPUnit_Framework_TestCase
     {
     //     protected function tearDown()
     //    {
@@ -17,18 +17,21 @@
     //        SecondClass::deleteAll();
     //    }
 
-       function test_someFunction()
+       function test_getId()
        {
            //Arrange
-
+           $id = 1;
+           $name = "Bilbo Baggins";
+           $test_stylist = new Stylist($id, $name);
 
            //Act
-
+           $result = $test_stylist->getId();
 
            //Assert
-
-
+           $this->assertEquals($id, $result);
        }
 
 
+
+   }
 ?>

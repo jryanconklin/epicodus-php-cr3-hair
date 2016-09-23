@@ -9,26 +9,26 @@
     require_once __DIR__."/../src/Stylist.php";
     require_once __DIR__."/../src/Client.php";
 
-    class ClassTest extends PHPUnit_Framework_TestCase
-    {
+    // class ClientTest extends PHPUnit_Framework_TestCase
+    // {
     //     protected function tearDown()
     //    {
     //        FirstClass::deleteAll();
     //        SecondClass::deleteAll();
     //    }
+    //
+    //    function test_someFunction()
+    //    {
+    //        //Arrange
+       //
+       //
+    //        //Act
+       //
+       //
+    //        //Assert
+       //
+       //
+    //    }
 
-       function test_someFunction()
-       {
-           //Arrange
-
-
-           //Act
-
-
-           //Assert
-
-
-       }
-
-
+   // }
 ?>

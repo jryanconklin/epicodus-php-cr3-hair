@@ -1,13 +1,13 @@
 <?php
 //Home Connection #1
-    try {
-    $DB = new PDO("mysql:host=localhost;dbname=hair_salon;port=8889","root","root");
-    $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (Exception $e) {
-      echo "Unable to Connect";
-      //echo $e->getMessage();
-      exit;
-    } // native exception class
+    // try {
+    // $DB = new PDO("mysql:host=localhost;dbname=hair_salon;port=8889","root","root");
+    // $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // } catch (Exception $e) {
+    //   echo "Unable to Connect";
+    //   //echo $e->getMessage();
+    //   exit;
+    // } // native exception class
 
 // Home Connection #2
     // $server = 'mysql:host=localhost:8889;dbname=hair_salon';
@@ -16,7 +16,7 @@
     // $DB = new PDO($server, $username, $password);
 
 //Epicodus Connection
-    // $server = 'mysql:host=localhost;dbname=hair_salon';
-    // $username = 'root';
-    // $password = 'root';
-    // $DB = new PDO($server, $username, $password);
+    $server = 'mysql:host=localhost;dbname=hair_salon';
+    $username = 'root';
+    $password = 'root';
+    $DB = new PDO($server, $username, $password);

@@ -24,25 +24,48 @@ For best results, please:
 
 ## Specifications
 
-*A spec in plain english.*
+#### Specification 1 ####
+*Create and Display a Stylist.*
 
-__Input__:
+__Input__: 'Bilbo Baggins'
 
-__Output__:
+__Output__: 'Bilbo Baggins'
 
 #### Specification 2 ####
-*Another spec in plain english.*
+*Edit a Stylist*
 
-__Input__:
+__Input__: 'Bilbo Baggins'
 
-__Output__:
+__Output__: 'Frodo Baggins'
 
 #### Specification 3 ####
-*Yet another spec in plain english.*
+*Delete a Stylist*
 
-__Input__:
+__Input__: 'Bilbo Baggins'
 
-__Output__:
+__Output__: ''
+
+#### Specification 4 ####
+*Create and Display a Client.*
+
+__Input__: 'Gandalf the Grey'
+
+__Output__: 'Gandalf the Grey'
+
+#### Specification 5 ####
+*Edit a Client*
+
+__Input__: 'Gandalf the Grey'
+
+__Output__: 'Thorin Oakenshield'
+
+#### Specification 6 ####
+*Delete a Client*
+
+__Input__: 'Gandalf the Grey'
+
+__Output__: ''
+
 
 ## Author/s
 J. Ryan Conklin
