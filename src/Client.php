@@ -7,10 +7,11 @@
         private $name;
 
 //Constructor
-        function __construct($id = null, $name)
+        function __construct($id = null, $name, $stylist_id = 0)
         {
             $this->id = $id;
             $this->name = $name;
+            $this->stylist_id = $stylist_id;
         }
 
 
@@ -25,9 +26,19 @@
             return $this->name;
         }
 
+        function getStylistId()
+        {
+            return $this->stylist_id;
+        }
+
         function setName($new_name)
         {
-            $this->name = $new_name;
+            $this->name = (string) $new_name;
+        }
+
+        function setStylistId($new_stylist_id)
+        {
+            $this->stylist_id = $new_stylist_id;
         }
 
 

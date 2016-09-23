@@ -27,7 +27,7 @@
 
         function setName($new_name)
         {
-            $this->name = $new_name;
+            $this->name = (string) $new_name;
         }
 
 //Regular Methods
@@ -47,6 +47,7 @@
         function delete()
         {
             $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
+            $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
         }
 
 //Static Methods

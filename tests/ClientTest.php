@@ -21,7 +21,7 @@
         function test_getId()
         {
             //Arrange
-            $id = 1;
+            $id = null;
             $name = "Gandalf the Grey";
             $test_client = new Client($id, $name);
 
@@ -35,7 +35,7 @@
         function test_getName()
         {
             //Arrange
-            $id = 1;
+            $id = null;
             $name = "Gandalf the Grey";
             $test_client = new Client($id, $name);
 
@@ -46,10 +46,30 @@
             $this->assertEquals($name, $result);
         }
 
+        function test_getStylistId()
+        {
+            //Arrange
+            $id = null;
+            $name = "Bilbo Baggins";
+            $test_stylist = new Stylist($id, $name);
+            $test_stylist->save();
+            $stylist_id = $test_stylist->getId();
+
+            $id = null;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name, $stylist_id);
+
+            //Act
+            $result = $test_client->getStylistId();
+
+            //Assert
+            $this->assertEquals($stylist_id, $result);
+        }
+
         function test_setName()
         {
             //Arrange
-            $id = 1;
+            $id = null;
             $name = "Gandalf the Grey";
             $test_client = new Client($id, $name);
             $new_name = "Thorin Oakenshield";
@@ -60,6 +80,33 @@
 
             //Assert
             $this->assertEquals($new_name, $result);
+        }
+
+        function test_setStylistId()
+        {
+            //Arrange
+            $id1 = null;
+            $name1 = "Bilbo Baggins";
+            $test_stylist1 = new Stylist($id1, $name1);
+            $test_stylist1->save();
+            $stylist_id1 = $test_stylist1->getId();
+
+            $id2 = null;
+            $name2 = "Frodo Baggins";
+            $test_stylist2 = new Stylist($id2, $name2);
+            $test_stylist2->save();
+            $stylist_id2 = $test_stylist2->getId();
+
+            $id = null;
+            $name = "Gandalf the Grey";
+            $test_client = new Client($id, $name, $stylist_id1);
+
+            //Act
+            $test_client->setStylistId($stylist_id2);
+            $result = $test_client->getStylistId();
+
+            //Assert
+            $this->assertEquals($stylist_id2, $result);
         }
 
 
