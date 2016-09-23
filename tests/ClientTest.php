@@ -106,21 +106,39 @@
             //Arrange
             $id1 = null;
             $name1 = "Gandalf the Grey";
-            $test_stylist1 = new Stylist($id1, $name1);
-            $test_stylist1->save();
+            $test_client1 = new Client($id1, $name1);
+            $test_client1->save();
             $id2 = null;
             $name2 = "Thorin Oakenshield";
-            $test_stylist2 = new Stylist($id2, $name2);
-            $test_stylist2->save();
+            $test_client2 = new Client($id2, $name2);
+            $test_client2->save();
 
             //Act
-            Stylist::deleteAll();
-            $result = Stylist::getAll();
+            Client::deleteAll();
+            $result = Client::getAll();
 
             //Assert
             $this->assertEquals([], $result);
         }
 
+        function test_find()
+        {
+            //Arrange
+            $id1 = null;
+            $name1 = "Gandalf the Grey";
+            $test_client1 = new Client($id1, $name1);
+            $test_client1->save();
+            $id2 = null;
+            $name2 = "Thorin Oakenshield";
+            $test_client2 = new Client($id2, $name2);
+            $test_client2->save();
+
+            //Act
+            $result = Client::find($test_client1->getId());
+
+            //Assert
+            $this->assertEquals($test_client1, $result);
+        }
 
 
 
