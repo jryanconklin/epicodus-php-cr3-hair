@@ -1,0 +1,46 @@
+{% include 'header.html.twig' %}
+
+            <div class="data-table">
+            <h4>Welcome to the Interactive Page for {{ stylist.getName }}</h4>
+        {% if clients is not empty %}
+                <hr>
+                <h5>Clients of {{ stylist.getName }}</h5>
+                <table class="table table-bordered">
+                    <thead class="inverse">
+                        <tr>
+                            <th>Client ID</th>
+                            <th>Client Name</th>
+                            <th>Edit Client?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for client in clients %}
+                        <tr>
+                            <td>{{ client.getId }}</td>
+                            <td>{{ client.getName }}</td>
+                            <td><a href="/clients/{{ client.getId }}">Edit</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <hr>
+        {% else %}
+                <br>
+                <p>No Clients Yet. SAD FACE.</p>
+        {% endif %}
+            </div>
+            <div class="add-data">
+                <h4>Add a Client</h4>
+
+                <form action="/clients" method="post">
+                    <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId }}">
+                    <label for="name">Client Name</label>
+                    <input id="name" name="name" type="text">
+
+                    <button class="btn btn-success" type="submit">Add Client</button>
+                </form>
+
+
+            </div>
+
+{% include 'footer.html.twig' %}

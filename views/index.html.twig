@@ -1,9 +1,8 @@
 {% include 'header.html.twig' %}
+                <h2>Welcome to StyleCONNECT</h2>
+                <small class="text-muted">An Interactive Stylist Management System by styleTech Inc.</small>
 
-            <h2>Welcome to StyleCONNECT</h2>
-            <small class="text-muted">An Interactive Stylist Management System by styleTech Inc.</small>
-
-                <div class="stylist-table">
+                <div class="data-table">
             {% if stylists is not empty %}
                     <h4>Your Stylists</h4>
                     <hr>
@@ -25,11 +24,12 @@
                             {% endfor %}
                         </tbody>
                     </table>
+                    <hr>
             {% else %}
                     <p>Get Hiring! No Stylists Yet!</p>
             {% endif %}
                 </div>
-                <div class="stylist-add">
+                <div class="add-data">
                     <h4>Add a Stylist</h4>
                     <form action="/stylists" method="post">
                         <label for="name">Stylist Name</label>
