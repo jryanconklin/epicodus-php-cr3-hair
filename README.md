@@ -1,5 +1,6 @@
 # Hair Salon
 Database Basics with PHP
+
 *Code Review #3*
 
 ## Features
