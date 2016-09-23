@@ -17,9 +17,20 @@
 
 //Home Path
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('index.html.twig', array('classvariable' => FirstClass::getAll()));
+        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
 
+
+//Stylist Path
+    $app->get("/stylists", function() use ($app) {
+        return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
+    });
+
+    $app->post("/stylists", function() use ($app) {
+        $stylist = new Stylist($id = null, $_POST['name']);
+        $stylist->save();
+        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
+    });
 
 
     return $app;
